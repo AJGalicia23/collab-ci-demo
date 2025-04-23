@@ -53,20 +53,6 @@ Open `index.html` in any modern browser
 **Add Destinations**: Edit the `destinations` array in `script.js`  
 **Modify Layout**: Adjust grid/flex properties in CSS
 
-## Future Improvements
-
-🗺️ **Map Integration**  
-Add interactive maps for locations
-
-📅 **Calendar View**  
-Visual trip timeline
-
-🌐 **API Integration**  
-Real destination data from travel APIs
-
-📱 **PWA Conversion**  
-Make installable on mobile devices
-
 ## License
 
 MIT License - Feel free to modify and use for personal/commercial projects
