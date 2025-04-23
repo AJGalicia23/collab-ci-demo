@@ -94,3 +94,40 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Searching for: ${query}`);
     });
 });
+
+// map.js - New file
+class MapManager {
+    constructor(apiKey) {
+      this.mapboxKey = apiKey;
+      this.maps = new Map();
+    }
+  
+    initMap(containerId, coordinates) {
+      mapboxgl.accessToken = this.mapboxKey;
+      
+      const map = new mapboxgl.Map({
+        container: containerId,
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: coordinates,
+        zoom: 12
+      });
+      
+      new mapboxgl.Marker()
+        .setLngLat(coordinates)
+        .addTo(map);
+      
+      this.maps.set(containerId, map);
+      return map;
+    }
+  
+    resizeMap(containerId) {
+      const map = this.maps.get(containerId);
+      if (map) map.resize();
+    }
+  }
+  
+  // Export for testing
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = MapManager;
+  }
+  
